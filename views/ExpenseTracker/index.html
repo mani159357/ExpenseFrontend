@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1 id="premium"></h1>
+    <div class="container">
+        <form onsubmit="addNewExpense(event)" id="myform">
+            <label for="date">Date:</label>
+            <input type="date" name="date" id="date">
+            <label for="expenseamount">Choose Expense Amount:</label>
+            <input type="number" name="expenseamount" required>
+            <label for="description">Choose Description:</label>
+            <input type="text" name="description" required>
+            <label for="category">Choose Category:</label>
+            <select id="category" name="category">
+                <option value="fuel">fuel</option>
+                <option value="food">food</option>
+                <option value="electricity">electricity</option>
+                <option value="Movie">Movie</option>
+            </select>
+            <button>Add Expense</button>
+        </form>
+        <button onclick="showleadboard(event)">Show LeadBoard</button>
+        <br>
+        <div id="selectedExpensesPerPage">Showing 10 expenses per page</div>
+        <table id='expensesTable'>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Expense Amount</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id='listOfExpenses'>
+                <!-- Expenses will be dynamically added here -->
+            </tbody>
+        </table>
+        <label for="expensesPerPage">Expenses per page:</label>
+        <select id="expensesPerPage" onchange="updateExpensesPerPage()">
+        </select>
+        <div class="pagination">
+            <button id="prevPage" onclick="showExpenses(currentPage - 1)">Previous Page</button>
+            <span id="currentPage">Page 1</span>
+            <button id="nextPage" onclick="showExpenses(currentPage + 1)">Next Page</button>
+            <span id="totalPages">of N</span>
+        </div>
+        <br>
+        <button id="rzp-button1">Buy Premium</button>
+        <button onclick="download()" id="downloadexpense">Download File</button>
+        <div>
+            <ul id="board"></ul>
+        </div>
+    </div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src='./index.js'></script>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1 id="premium"></h1>
+    <form onsubmit="addNewExpense(event)" id="myform">
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date">
+        <label for="expenseamount">Choose expenseamount:</label>
+        <input type="number" name="expenseamount" required> 
+        <label for="description">Choose description:</label>
+        <input type="text" name="description" required>
+        <label for="category">Choose a category:</label>
+        <select id="category" name="category">
+            <option value="fuel">fuel</option>
+            <option value="food">food</option>
+            <option value="electricity">electricity</option>
+            <option value="Movie">Movie</option>
+        </select>
+        <button>Add Expense</button>
+    </form>
+    <br><hr>
+    <button onclick="showleadboard(event)">Show LeadBoard</button>
+    <br><hr>
+    <ul id='listOfExpenses'>
+
+    </ul>
+    <br><hr>
+    <button id="prevPage" onclick="showExpenses(currentPage - 1)">Previous Page</button>
+    <span id="currentPage">Page 1</span>
+    <button id="nextPage" onclick="showExpenses(currentPage + 1)">Next Page</button>
+    <span id="totalPages">of N</span>
+    <br><hr>
+    <button id="rzp-button1">Buy Premium</button>
+    <br><hr>
+    <button onclick="download()" id="downloadexpense">Download File</button>
+    <div>
+        <ul id="board">
+        </ul>
+    </div>
+    <br><hr>
+    <div id="error-message"></div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src='./index.js'></script>
+</body>
+</html> -->

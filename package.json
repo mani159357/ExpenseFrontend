@@ -1,0 +1,41 @@
+{
+  "name": "nodejs-complete-guide",
+  "version": "1.0.0",
+  "description": "Complete Node.js Guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "author": "Maximilian Schwarzmüller",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "@azure/storage-blob": "^12.0.0",
+    "@sendgrid/mail": "^7.4.4",
+    "aws-sdk": "^2.1499.0",
+    "axios": "^1.6.2",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.4",
+    "compressorjs": "^1.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^1.6.1",
+    "pug": "^2.0.3",
+    "razorpay": "^2.0.6",
+    "sequelize": "^6.6.2",
+    "sib-api-v3-sdk": "^8.5.0",
+    "uuid": "^8.3.2"
+  }
+}

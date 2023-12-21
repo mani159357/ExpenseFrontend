@@ -1,0 +1,173 @@
+
+form {
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input, select {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Additional styling for table */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+thead th, tbody td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Additional styling for pagination */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#prevPage, #nextPage {
+    background-color: #008CBA;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+#prevPage:disabled, #nextPage:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+}
+
+#currentPage, #totalPages {
+    margin-left: 10px;
+    color: #333;
+}
+
+/* Additional styling for error message */
+#error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Additional styles for the container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#expensesPerPage {
+    font-size: 14px;
+    padding: 8px;
+}
+
+#expensesPerPage option {
+    background-color: #fff;
+    color: #333;
+}
+
+#expensesPerPage:hover,
+#expensesPerPage:active,
+#expensesPerPage:focus {
+    border: 1px solid #3498db;
+}
+
+
+#selectedExpensesPerPage {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* Add these styles for the leaderboard */
+#board {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#board li {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#board li:hover {
+    background-color: #f2f2f2;
+}
+
+#board li span {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Adjust the following styles as needed */
+
+/* Center the leaderboard */
+#board {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Provide some space between leaderboard items */
+#board li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
