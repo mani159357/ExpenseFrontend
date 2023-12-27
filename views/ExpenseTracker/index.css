@@ -1,3 +1,19 @@
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 form {
     margin-bottom: 20px;
@@ -66,7 +82,9 @@ tbody tr:hover {
 .pagination {
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
 }
 
 #prevPage, #nextPage {
@@ -76,7 +94,7 @@ tbody tr:hover {
     border: none;
     cursor: pointer;
     border-radius: 4px;
-    margin-right: 10px;
+    margin-bottom: 10px;
     transition: background-color 0.3s;
 }
 
@@ -86,88 +104,47 @@ tbody tr:hover {
 }
 
 #currentPage, #totalPages {
-    margin-left: 10px;
+    margin-top: 10px;
     color: #333;
 }
 
-/* Additional styling for error message */
-#error-message {
-    color: red;
-    margin-top: 10px;
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    thead {
+        display: none; /* Hide thead on small screens */
+    }
+
+    tbody tr {
+        display: block;
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    tbody td {
+        display: block;
+        text-align: center;
+    }
+
+    tbody td:before {
+        content: attr(data-label); /* Use the data-label attribute as content for ::before */
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+    }
 }
 
-/* Additional styles for the container */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-#expensesPerPage {
-    font-size: 14px;
-    padding: 8px;
-}
-
-#expensesPerPage option {
-    background-color: #fff;
-    color: #333;
-}
-
-#expensesPerPage:hover,
-#expensesPerPage:active,
-#expensesPerPage:focus {
-    border: 1px solid #3498db;
-}
-
-
-#selectedExpensesPerPage {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #555;
-}
-
-
-/* Add these styles for the leaderboard */
-#board {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-#board li {
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#board li:hover {
-    background-color: #f2f2f2;
-}
-
-#board li span {
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-/* Adjust the following styles as needed */
-
-/* Center the leaderboard */
-#board {
-    margin: 0 auto;
-    max-width: 600px;
-}
-
-/* Provide some space between leaderboard items */
-#board li:not(:last-child) {
-    margin-bottom: 10px;
-}
-
+/* Rest of your existing styles */

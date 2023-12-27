@@ -33,7 +33,7 @@ const forgotpassword = async (req, res) => {
                     throw new Error(err)
                 })
 
-            const resetLink = `http://localHost:3000/password/resetpassword/${newUuid}?token=${resetToken}`;
+            const resetLink = `http://${process.env.IP}:${process.env.PORT}/password/resetpassword/${newUuid}?token=${resetToken}`;
             const subject = "Password Reset Request";
             const textContent = `Click the following link to reset your password: ${resetLink}`;
 
