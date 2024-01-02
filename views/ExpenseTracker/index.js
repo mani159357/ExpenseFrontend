@@ -54,10 +54,14 @@ function addNewExpensetoUI(expense) {
 ////////// Premium Checkers //////////
 function premium() {
     axios.get('/user/premium', { headers: { "Authorization": token } }).then(response => {
-        if (response.status === 200) {
+        if (response.status === 200) {      
             const premium = document.getElementById('premium')
             premium.innerHTML = (response.data.user.ispremiumuser == true) ? 'premium user' : ''
-            premium.style.color = 'gold'
+
+            if(response.data.user.ispremiumuser){
+                const buybutton = document.getElementById('rzp-button1') 
+                buybutton.remove()
+            }
         } else {
             throw new Error();
         }
@@ -188,8 +192,8 @@ async function showleadboard(e) {
         board.innerHTML = '';
         axios.get('/user/leadboard', { headers: { "Authorization": token } }).then((result) => {
             result.data.forEach(element => {
-                const data = "<li> name: " + element.name + "; total expense: " + element
-                    .totalExp + "</li>";
+                const data = "<li> " + element.name + " : " + element
+                    .totalExp +" Rs"+"</li>";
                 board.innerHTML += data;
             })
         })
@@ -237,6 +241,7 @@ function populateExpensesPerPageDropdown() {
 ////////// On load executives like expenses, premium and so on //////////
 window.onload = async () => {
 
+    fetchnameofuser();
     premium();
     populateExpensesPerPageDropdown();
     const expensesPerPage = getExpensesPerPagePreference();
@@ -290,4 +295,11 @@ function showExpenses(page) {
         document.getElementById('nextPage').disabled = currentPage === totalPages;
     })
         .catch(err => showError(err))
+}
+
+function fetchnameofuser(){
+    axios.get('/user/name',{headers : {"Authorization": token }}).then(response => {
+        const user = document.getElementById('user')
+        user.innerHTML = `Hi, ${response.data.user.name}`
+    })
 }

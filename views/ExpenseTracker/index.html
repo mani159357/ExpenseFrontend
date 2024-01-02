@@ -12,6 +12,7 @@
 <body>
     <h1 id="premium"></h1>
     <div class="container">
+        <h1 id="user"></h1>
         <form onsubmit="addNewExpense(event)" id="myform">
             <label for="date">Date:</label>
             <input type="date" name="date" id="date">
@@ -28,7 +29,6 @@
             </select>
             <button>Add Expense</button>
         </form>
-        <button onclick="showleadboard(event)">Show LeadBoard</button>
         <br>
         <div id="selectedExpensesPerPage">Showing 10 expenses per page</div>
         <table id='expensesTable'>
@@ -45,6 +45,7 @@
                 <!-- Expenses will be dynamically added here -->
             </tbody>
         </table>
+        <br>
         <label for="expensesPerPage">Expenses per page:</label>
         <select id="expensesPerPage" onchange="updateExpensesPerPage()">
         </select>
@@ -56,9 +57,16 @@
         </div>
         <br>
         <button id="rzp-button1">Buy Premium</button>
+        <br>
+        <h2>Premium Features</h2>
+        <hr>
+        <br>
         <button onclick="download()" id="downloadexpense">Download File</button>
+        <br>
+        <br>
+        <button onclick="showleadboard(event)">Show LeadBoard</button>
         <div>
-            <ul id="board"></ul>
+            <ol id="board"></ol>
         </div>
     </div>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>

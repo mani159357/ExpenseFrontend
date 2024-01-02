@@ -24,6 +24,8 @@ router.get('/getexpenses', authenticatemiddleware.authenticate, expenseControlle
 
 router.delete('/deleteexpense/:expenseid', authenticatemiddleware.authenticate, expenseController.deleteexpense)
 
+router.get('/name' , authenticatemiddleware.authenticate, expenseController.username)
+
 
 
 module.exports = router;

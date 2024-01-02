@@ -4,15 +4,25 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* background-image: url(bg5.jpg); */
 }
+
+body {
+    background-image: url(bg6.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #FFF5EE;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+    
 }
 
 form {
@@ -38,8 +48,18 @@ input, select {
     box-sizing: border-box;
 }
 
+#premium{
+    color: #DAA520;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+#user{
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    color: #FF6347;
+}
+
 button {
-    background-color: #4CAF50;
+    background-color: #66CDAA;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -48,12 +68,25 @@ button {
     transition: background-color 0.3s;
 }
 
+#rzp-button1{
+    background-color: #66CDAA;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+#rzp-button1:hover{
+    background-color: #B8860B;
+}
+
 button:hover {
     background-color: #45a049;
 }
 
 /* Additional styling for table */
-table {
+table { 
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
@@ -70,7 +103,7 @@ thead th, tbody td {
 }
 
 thead th {
-    background-color: #4CAF50;
+    background-color: #66CDAA;
     color: white;
 }
 
@@ -88,8 +121,8 @@ tbody tr:hover {
 }
 
 #prevPage, #nextPage {
-    background-color: #008CBA;
-    color: white;
+    background-color: #F0E68C;
+    color: #B22222;
     padding: 12px 20px;
     border: none;
     cursor: pointer;

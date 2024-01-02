@@ -100,11 +100,23 @@ const leadboardPage = async (req, res, next) => {
 
 }
 
+const username = async (req,res,next) => {
+    try{
+        const id = jwt.verify(req.headers.authorization, process.env.TOKEN_SECRET)
+        User.findByPk(id).then((result) => {
+        res.status(200).json({user: result, success: true})
+    })
+    }catch{
+        throw new Error(err)
+    }
+}
+
 
 module.exports = {
     deleteexpense,
     getexpenses,
     addexpense,
     downloadExpenses,
-    leadboardPage
+    leadboardPage,
+    username
 }

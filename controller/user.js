@@ -18,7 +18,7 @@ const premiumPage = (req,res) =>{
     const saltRounds = 10;
     bcrypt.genSalt(saltRounds, function(err, salt) {
         bcrypt.hash(password, salt, function(err, hash) {
-            // Store hash in your password DB.
+            // Store hash in password DB.
             if(err){
                 res.json({message: 'Unable to create new user'})
             }
